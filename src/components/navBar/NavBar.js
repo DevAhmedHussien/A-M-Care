@@ -1,156 +1,232 @@
+
+        import { Link } from 'react-router-dom';
+
+     
     import * as React from 'react';
-    import PropTypes from 'prop-types';
     import AppBar from '@mui/material/AppBar';
     import Box from '@mui/material/Box';
-    import CssBaseline from '@mui/material/CssBaseline';
-    import Divider from '@mui/material/Divider';
-    import Drawer from '@mui/material/Drawer';
-    import IconButton from '@mui/material/IconButton';
-    import List from '@mui/material/List';
-    import ListItem from '@mui/material/ListItem';
-    import ListItemButton from '@mui/material/ListItemButton';
-    import ListItemText from '@mui/material/ListItemText';
-    import MenuIcon from '@mui/icons-material/Menu';
     import Toolbar from '@mui/material/Toolbar';
+    import IconButton from '@mui/material/IconButton';
     import Typography from '@mui/material/Typography';
+    import Menu from '@mui/material/Menu';
+    import MenuIcon from '@mui/icons-material/Menu';
+    import Container from '@mui/material/Container';
+    import Avatar from '@mui/material/Avatar';
     import Button from '@mui/material/Button';
-    import { Link } from 'react-router-dom';
+    import Tooltip from '@mui/material/Tooltip';
+    import MenuItem from '@mui/material/MenuItem';
+    import AdbIcon from '@mui/icons-material/Adb';
+    import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+    import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
-    const drawerWidth = 240;
-    const navItems = ['Home','Product', 'About', 'Contact'];
+    const pages = [  'Home', 'Pricing','Product', 'About', 'Contact'];
+    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-    function DrawerAppBar(props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    function DrawerAppBar() {
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
     };
 
-    const drawer = (
-        // when i using phone 
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' ,background:'#eee' }}>  
-        <Typography variant="h6" sx={{ my: 2 }}>
-            A&M-care 
-        </Typography>
-        <Divider />
-        <List>
-            {navItems.map((item) => (
-                item === 'Home'?
-                <Link to={`/`}>
-                    <ListItem key={'Home'} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                        <ListItemText primary={'Home'} />
-                    </ListItemButton>
-                </ListItem>
-                </Link>
-                :
-            <Link to={`/${item}`}>
-                <ListItem key={item} disablePadding>
-                    <ListItemButton sx={{ textAlign: 'center' }}>
-                    <ListItemText primary={item} />
-                    </ListItemButton>
-                </ListItem>
-            </Link>
-            ))}
-        </List>
-        </Box>
-    );
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
 
-    const container = window !== undefined ? () => window().document.body : undefined;
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
     return (
-        <Box sx={{ display: 'flex'  }}>
-        <CssBaseline />
-        <AppBar component="nav" sx={{background:'#638889', 
+        <AppBar position="static" sx={{background:'white',color:'black' //'#638889'
         }}>
-            <Toolbar>
-            <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-                <MenuIcon />
-            </IconButton>
+        <Container maxWidth="xl">
+            <Toolbar disableGutters>
+            <AdbIcon sx={{ color:'#3399ff' ,display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
                 variant="h6"
-                component="div"
-                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{ 
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                // color: '#3399ff',
+                textDecoration: 'none',
+                }}
             >
-                A&M-care 
+                A&M-Care
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {navItems.map((item) => (
-                item === 'Home'?
-                <Link to={`/`}>
-                <Button key={item} 
-                    sx={{ color: '#fff' ,
-                    transition:'170ms',
-                    '&:hover': {
-                    backgroundColor: '#9DBC98 ',
-                    mb:1,
-                },'&:active': {
-                    boxShadow: 'none',
-                    backgroundColor: 'black',
-                }
-                }}>
-                    {item}
-                </Button>
-            </Link>
-                :
-                <Link to={`/${item}`}>
-                    <Button key={item} 
-                        sx={{ color: '#fff' ,
-                        transition:'170ms',
-                        '&:hover': {
-                        backgroundColor: '#9DBC98 ',
-                        mb:1,
-                    },'&:active': {
-                        boxShadow: 'none',
-                        backgroundColor: 'black',
-                    }
-                    }}>
-                            {item}
-                    </Button>
-                </Link>
 
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+                >
+                <MenuIcon />
+                </IconButton>
+                <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{ 
+                    display: { xs: 'block', md: 'none' },
+                }}
+                >
+                {pages.map((page) => (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography sx={{textTransform: 'capitalize',}} textAlign="center">{page}</Typography>
+                    </MenuItem>
+                ))}
+                </Menu>
+            </Box>
+            <AdbIcon sx={{color:'#3399ff', display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                color:'#3399ff',
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                // color: 'inherit',
+                textDecoration: 'none',
+                }}
+            >
+                A&M-Care
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                {pages.map((page) => (
+                    page=== 'Home'?
+                    <Link to={'/'}>
+                        <Button 
+                            key={page}
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'black', display: 'block',textTransform: 'capitalize',
+                            fontWeight:600,
+                            '&:hover': {
+                            backgroundColor:'#e5eaf299',
+                            mb:1,
+                        },'&:active': {
+                            boxShadow: 'none',
+                            backgroundColor: 'black',
+                        } }}
+                        >
+                            {page}
+                        </Button>
+                    </Link>
+                    :
+                    <Link to={`${page}`}>
+                        <Button 
+                        key={page} 
+                            sx={{  my: 2, color: 'black', display: 'block',textTransform: 'capitalize',
+                            transition:'170ms',
+                            fontWeight:600,
+                            '&:hover': {
+                            backgroundColor:'#e5eaf299',
+                            mb:1,
+                        },'&:active': {
+                            boxShadow: 'none',
+                            backgroundColor: 'black',
+                        }
+                        }}>
+                                {page}
+                        </Button>
+                    </Link>
                 ))}
             </Box>
-            </Toolbar>
-        </AppBar>
-        <nav>
-            <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-            }}
+            {/* <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+                </Tooltip>
+                <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+                >
+                {settings.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                ))}
+                </Menu>
+            </Box> */}
+            {/* <Button variant='contained'
             sx={{
-                display: { xs: 'block', sm: 'none' },
-                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            }}
-            >
-            {drawer}
-            </Drawer>
-        </nav>
-        <Box component="main" sx={{ p: 3 }}>
-            <Toolbar />
-        
-        </Box>
-        </Box>
+                textTransform: 'capitalize',
+            }}>
+                Get Started
+            </Button> */}
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center', 
+                width: '30px',
+                height: '30px', 
+                border:'1px solid white',
+                borderRadius: '5px',
+                marginLeft: '10px',
+                marginRight: '10px',
+                cursor:'pointer',
+                boxShadow: '1px 0px 9px 2px silver'}}>   
+                    <NightlightOutlinedIcon sx={{fontSize:'20px',color:'#3399ff'}}/>
+            </Box>
+            {/* <Box  sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center', 
+                width: '30px',
+                height: '30px', 
+                border:'1px solid white',
+                borderRadius: '5px',
+                marginLeft: '10px',
+                marginRight: '10px',
+                cursor:'pointer',
+                boxShadow: '1px 0px 9px 2px silver'}}>
+                <ShoppingBagOutlinedIcon sx={{fontSize:'20px',color:'#3399ff'}}/>
+            </Box> */}
+            </Toolbar>
+        </Container>
+        </AppBar>
     );
     }
-
-    DrawerAppBar.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
-    };
-
     export default DrawerAppBar;

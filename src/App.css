@@ -2,10 +2,12 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 :root{
     --primary:#638889;
     --second :#9DBC98;
     --light:#F9EFDB;
     --fourth:#EBD9B4;
+    --blue-primary:'#3399ff'
 }
