@@ -9,7 +9,6 @@ import Questions from './questions/Questions';
 import ToggleButtons from './ToggleButtons'
 import Comment from './comment/Comment';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
-
 import Provider from './providerDoctor/Provider';
 import { tokens } from '../../Context/ThemeContext';
 import { useTheme } from '@mui/material';

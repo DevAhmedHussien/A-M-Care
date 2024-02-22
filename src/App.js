@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState,useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { Route,Routes } from 'react-router-dom';
 import NavBar from './components/navBar/NavBar';
 import Main from './components/Main/Main';
@@ -11,7 +11,7 @@ import {useMode} from './Context/ThemeContext'
 import { ColorModeContext,tokens} from './Context/ThemeContext'
 import Cart from './components/cart/Cart';
 import NotFound from './components/notFound/NotFound';
-import  {StateProvider}  from './Context/GlobalContext';
+// import  {StateProvider}  from './Context/GlobalContext';
 import{ GlobalContext } from './Context/GlobalContext';
 import { useTranslation } from 'react-i18next';
 function App() {
@@ -36,6 +36,7 @@ function App() {
     setBasket(arr);
     getBasketTotal();
 }
+  // to get price 
     useEffect(()=>{
       getBasketTotal()
     },[basket])
