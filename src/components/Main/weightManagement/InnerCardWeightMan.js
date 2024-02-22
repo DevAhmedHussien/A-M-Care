@@ -9,8 +9,8 @@ export default function InnerCardWeightMan({description}){
     return (
         <>
         <Box
-            sx={{display:'flex',justifyContent:'start',alignItems:'center',gap:1, }}>
-                <GppGoodIcon sx={{color:'#3399ff', fontSize:'17px' }}/>
+            sx={{display:'flex',justifyContent:'center',alignItems:'start',gap:1, height:'200px'}}>
+                <GppGoodIcon sx={{color:'#3399ff', fontSize:'17px',mt:"6px" }}/>
                 <Typography variant='h6' color = {colors.primary[200]} >{description}</Typography>
         </Box>
         </>

@@ -19,6 +19,8 @@
                900: "#6b7a90  " , //UNDER LINE SENTENCE
                950:"#253546", //cards innerAbout me and experience and projects and contact me 
                1000 :"linear-gradient(rgb(77 181 255), #cdcdcd00)" // backgroundphotoheader
+               ,1050:'#eee',
+               1100:'rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
           },
           }
      : {
@@ -35,7 +37,10 @@
                700: "#727681",
                800: "#a1a4ab",
                900: "#d0d1d5",
-               1000 :"linear-gradient(silver, white)"
+               1000 :"linear-gradient(silver, white)",
+               1050:'black',
+               // 1100:'1px -1px 14px 0px #3399ff',
+               1100:'-1px 2px 10px 0px #3399ff'
           },
           }),
      });

@@ -2,25 +2,18 @@ import { Link } from 'react-router-dom';
 import * as React from 'react';
 import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import {Box,Toolbar,IconButton,Typography,Menu,Button,Container} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import LanguageButtons from './LanguageButtons';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import NightsStayOutlinedIcon from '@mui/icons-material/NightsStayOutlined';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
-import {useMode} from '../../Context/ThemeContext'
 import { ColorModeContext,tokens} from '../../Context/ThemeContext'
 import { GlobalContext } from "../../Context/GlobalContext"
 import { useTheme } from '@mui/material';
+
 const pages = [  'Home', 'Pricing','Product', 'About', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function DrawerAppBar() {
@@ -135,10 +128,11 @@ return (
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2,color:colors.primary[200], display: 'block',textTransform: 'capitalize',
                         transition:'170ms',
-                        fontWeight:600,///%
+                        // fontWeight:600,///%
                         '&:hover': {
                         backgroundColor:'#e5eaf299',
                         mb:1,
+                        fontWeight:600
                         // color:'#6b7a90'
                     },'&:active': {
                         boxShadow: 'none',
@@ -154,10 +148,12 @@ return (
                     key={page} 
                         sx={{  my: 2, color:colors.primary[200], display: 'block',textTransform: 'capitalize',
                         transition:'170ms',
-                        fontWeight:600,
+                        
+                        // fontWeight:600,
                         '&:hover': {
                         backgroundColor:'#e5eaf299',
                         mb:1,
+                        fontWeight:600,
                         // color:'#6b7a90'
                     },'&:active': {
                         boxShadow: 'none',
@@ -268,6 +264,7 @@ return (
                     }}>{basket.length}</Typography>
             </Box>
         </Link>
+        <LanguageButtons/>
         </Toolbar>
     </Container>
     </AppBar>

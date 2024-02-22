@@ -3,7 +3,7 @@ import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 import Items from '../ProductsItems/Items';
 import {productsData} from './ProductsData'
-export default function ProductItems(){
+export default function ProductItems({products}){
 const theme = useTheme();
 const colors = tokens(theme.palette.mode);
 console.log('productData',productsData)
@@ -35,7 +35,7 @@ return(
                     height:'100%',
                     }}>
                         {
-                            productsData.map((item)=>{
+                            products.map((item)=>{
                                 return(
                                     <Items key={item.id} item={item}/>
                                 )
