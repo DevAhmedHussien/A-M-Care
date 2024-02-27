@@ -12,10 +12,15 @@ export default function Alert({show,setShow}){
     return(
         <Box 
         sx={{
-            mt:8,
+            // mt:8,
             color:'white',
+            position:'fixed',
+            top:60,
+            left:150,
+            zIndex:'100',
+            width:'70%',
             // background:colors.primary[300],
-             height:'60px',display: show ? 'flex' : 'none',
+             height:'50px',display: show ? 'flex' : 'none',
             alignItems:'center', justifyContent:'space-evenly',
             background:'linear-gradient(silver, #9198e5)',
             transition:'170ms',

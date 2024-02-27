@@ -18,7 +18,8 @@ export default function Main(){
 return (
 <Box sx={{}}>
     <Box component ='div' 
-    sx={{height:'100vh',
+    sx={{
+        height:'96vh',
         position:'relative',
         display: 'flex',
         flexDirection: 'column',

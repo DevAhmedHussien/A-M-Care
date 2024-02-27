@@ -11,6 +11,7 @@ import {useMode} from './Context/ThemeContext'
 import { ColorModeContext,tokens} from './Context/ThemeContext'
 import Cart from './components/cart/Cart';
 import NotFound from './components/notFound/NotFound';
+import Form from './components/Form/Form';
 // import  {StateProvider}  from './Context/GlobalContext';
 import{ GlobalContext } from './Context/GlobalContext';
 import { useTranslation } from 'react-i18next';
@@ -80,6 +81,7 @@ function App() {
           <Route path="About" element={ <About/> } />
           <Route path="Contact" element={ <Contact/> } />
           <Route path="Cart" element={ <Cart/> } />
+          <Route path="Form" element={<Form/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>  

@@ -12,7 +12,7 @@ export default function WeightM(){
         <Box variant='div'
         sx={{
             height:'100vh',
-            mt:5
+            // mt:5
         }}>
             <Typography variant='h3' color={colors.primary[200]}
             sx={{textAlign:'center',fontWeight:'700'}}> We Can Help You <span 
