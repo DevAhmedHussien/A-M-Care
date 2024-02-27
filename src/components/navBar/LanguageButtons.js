@@ -24,7 +24,8 @@ return (
     }}>
     <SpeedDial
         ariaLabel="SpeedDial basic example"
-        sx={{ position: 'absolute', top: 310, left:language==='en'? '1180px': '20px',opacity:0.6 }}
+        sx={{ position: 'absolute', 
+        top:0, left:language==='en'? '1180px': '20px',opacity:0.6 }}
         icon={<SpeedDialIcon />}
     >
         {actions.map((action) => (

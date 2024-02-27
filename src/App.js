@@ -14,6 +14,7 @@ import NotFound from './components/notFound/NotFound';
 // import  {StateProvider}  from './Context/GlobalContext';
 import{ GlobalContext } from './Context/GlobalContext';
 import { useTranslation } from 'react-i18next';
+import Alert from './components/Main/Alert';
 function App() {
   const [theme, toggleColorMode , mode] = useMode();
   const colors = tokens(theme.palette.mode);
@@ -40,6 +41,18 @@ function App() {
     useEffect(()=>{
       getBasketTotal()
     },[basket])
+
+
+    //alert
+    const [show , setShow] = useState(false)
+    useEffect(()=>{
+        setTimeout(()=>{
+            setShow(true)
+        },1000)
+    },[])
+    const close = ()=>{
+      setShow(false)
+  }
   return (
     <ThemeProvider theme={theme}>  
     {/* <StateProvider>  */}
@@ -55,9 +68,11 @@ function App() {
         >
         <ColorModeContext.Provider value={{toggleColorMode,theme,mode}}>
       <div className= "App"
-      style={{ backgroundColor: colors.primary[100],
+      style={{
+        backgroundColor: colors.primary[100],
         direction: language==='en'? 'ltr':'rtl',
       }}> 
+        <Alert show={show} setShow={setShow}/>
         <NavBar/>
         <Routes>
           <Route path="/" element={ <Main/> } />
