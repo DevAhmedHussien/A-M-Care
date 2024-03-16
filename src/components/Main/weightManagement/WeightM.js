@@ -11,7 +11,7 @@ export default function WeightM(){
         <>
         <Box variant='div'
         sx={{
-            height:'100vh',
+            // height:'100vh',
             // mt:5
         }}>
             <Typography variant='h3' color={colors.primary[200]}
@@ -20,7 +20,8 @@ export default function WeightM(){
             <Typography variant='h5'  sx={{textAlign:'center',fontWeight:'500',mt:1}} color={colors.primary[900]}>
                 A&M Makes it easy to get started with no insurance required</Typography>
             <Box variant='div'
-            sx={{mt:10,display:'flex',justifyContent:'center',alignItems:'center',gap:10}}
+            sx={{m:'80px auto',
+                display:'flex',justifyContent:'center',alignItems:'center',gap:10}}
             >
                 <MultiActionAreaCard/>
             </Box>

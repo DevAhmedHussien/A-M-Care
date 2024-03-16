@@ -9,7 +9,7 @@ export default function MultiActionAreaCard() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);  
 return (
-    <Card sx={{ transition:'170ms',width: '70vw' , height:350, borderRadius:'10px' , background:colors.primary[100],
+    <Card sx={{ transition:'170ms',width: '70%' , height:350, borderRadius:'10px' , background:colors.primary[100],
     border:'1px solid #e5eaf299',
     '&:hover':{ 
         // backgroundColor:'#e5eaf299',

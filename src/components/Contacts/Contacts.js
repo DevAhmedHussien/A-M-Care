@@ -119,7 +119,10 @@
         </Box>
     <Box className='ConBox'
     component="form" ref={form} onSubmit={sendEmail}
-    sx={{mt:5,
+    sx={{
+        m:'80px auto',
+        width:'70%',
+    
     '& .MuiTextField-root': 
     { m: 1, width: '25ch' }, display:'flex',flexWrap:'wrap',
     justifyContent:'center',gap:20,alignItems: 'center'

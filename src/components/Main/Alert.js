@@ -14,14 +14,15 @@ export default function Alert({show,setShow}){
         sx={{
             // mt:8,
             color:'white',
+            p:3,
             position:'fixed',
-            top:60,
-            left:150,
+            top:70,
+            left:'15%',
             zIndex:'100',
             width:'70%',
             // background:colors.primary[300],
              height:'50px',display: show ? 'flex' : 'none',
-            alignItems:'center', justifyContent:'space-evenly',
+            alignItems:'center', justifyContent:'space-between',
             background:'linear-gradient(silver, #9198e5)',
             transition:'170ms',
             border:'1px solid #e5eaf299',
@@ -44,7 +45,9 @@ export default function Alert({show,setShow}){
             onClick={closing}>click here</Button>
         </Box>
         <IconButton aria-label="delete" size="small">
-            <CloseOutlinedIcon sx={{fontSize:20,color:colors.primary[200]}} />
+            <CloseOutlinedIcon 
+            sx={{fontSize:20,
+                color:colors.primary[200]}} />
         </IconButton>
         </Box>
     )

@@ -12,11 +12,15 @@ import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import Provider from './providerDoctor/Provider';
 import { tokens } from '../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
+// import LanguageButtons from '../../components/navBar/LanguageButtons';
+
 export default function Main(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 return (
-<Box sx={{}}>
+<Box sx={{position:'relative'}}>
+{/* <LanguageButtons/> */}
+    
     <Box component ='div' 
     sx={{
         height:'96vh',
@@ -64,7 +68,9 @@ return (
                 Upfront pricing with no hidden fees.</Typography>
             <ToggleButtons/>
         <Button variant="contained"  
-            endIcon={<ChevronRightOutlinedIcon id='icon1' sx={{position:'absolute',top:'10px',color:colors.primary[150],transition:'170ms',}}/>} 
+            endIcon={
+            <ChevronRightOutlinedIcon id='icon1' 
+            sx={{position:'absolute',top:'9px',color:colors.primary[150],transition:'170ms',}}/>} 
                 sx={{ my: 2, 
                     position :"relative", 
                     background: `linear-gradient(to right bottom, #007fff, #3399ff 140%)`,mt:'25px',

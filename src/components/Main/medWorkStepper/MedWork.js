@@ -3,6 +3,8 @@ import { Button, Step ,Stepper,Typography,StepLabel,StepContent,Paper,Box} from 
 import mainPhoto from '../../../images/doctor-nurses-special-equipment.jpg'
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
+import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 
 const steps = [
     {
@@ -50,14 +52,17 @@ return (
         A&M Makes it easy to get started with no insurance required</Typography>
         <Box 
         sx={{ width: '100%' ,
-        m:'30px auto',
+        m:'70px auto',
         display:'flex',
         justifyContent:'center',
         alignItems:'center'
         }}>
-            <Stepper activeStep={activeStep} orientation="vertical" sx={{width:'90vw'}}>
+            <Stepper activeStep={activeStep} orientation="vertical" sx={{width:'72%'}}>
             {steps.map((step, index) => (
-            <Step key={step.label}>
+            <Step key={step.label} 
+            sx={{m:'10px auto',}}
+
+            >
                 <StepLabel
                 optional={
                     index === 2 ? (
@@ -132,11 +137,56 @@ return (
             ))}
         </Stepper>
         {activeStep === steps.length && (
-            <Paper square elevation={0} sx={{ p: 3 }}>
-            <Typography>All steps completed - you&apos;re finished</Typography>
-            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                Reset
-            </Button>
+            <Paper      sx={{
+                //     display: 'flex', flexWrap:'wrap' ,p:2,
+                // justifyContent:'space-around',
+                // alignItems:'center',//gap:'30px',
+                m :'20px auto',
+                p:5,
+                height:'100%',
+                // width:'30%',
+                background:'linear-gradient(to top right, rgba(235, 245, 255, 0.3) 40%, rgba(243, 246, 249, 0.2) 100%)',
+                transition:'170ms',
+                border:'1px solid #e5eaf299',
+                borderRadius:'20px',
+                '&:hover':{ 
+                    boxShadow:'rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
+                    border:'1px solid #3399ff'
+                }}}>
+                     <Box 
+                >
+                        <Typography color={colors.primary[200]}>All steps completed - you&apos;re finished</Typography>
+                        <Typography color={colors.primary[200]}> Did you understand our Steps ?!</Typography>
+                        <Button color='error' onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                            No
+                        </Button>
+                        <Link to={'./Form'} >
+                            <Button variant=""  
+                                    endIcon={
+                                        <ChevronRightOutlinedIcon id='icon1' 
+                                        sx={{position:'absolute',top:'9px',color:colors.primary[150],transition:'170ms',}}/>
+                                } 
+                                    sx={{
+                                        color:colors.primary[300],
+                                        textTransform:'captalize',
+                                            '&:hover ': {
+                                                // backgroundColor:'white !important' ,
+                                                // mb:1,
+                                            },
+                                                '&:hover #icon1': {
+                                            marginLeft:'5px'
+                                                
+                                            },'&:active': {
+                                                boxShadow: 'none',
+                                                backgroundColor: 'black',
+                                            }
+                                    }}
+                                            type="submit" value="Send"> Get start
+                            </Button>
+                        </Link>
+                    </Box>
+            
+          
             </Paper>
         )}
     </Box>

@@ -12,10 +12,12 @@ import { ColorModeContext,tokens} from './Context/ThemeContext'
 import Cart from './components/cart/Cart';
 import NotFound from './components/notFound/NotFound';
 import Form from './components/Form/Form';
-// import  {StateProvider}  from './Context/GlobalContext';
+import LanguageButtons from './components/navBar/LanguageButtons';
+import Footer from './components/Footer/Footer'
 import{ GlobalContext } from './Context/GlobalContext';
 import { useTranslation } from 'react-i18next';
 import Alert from './components/Main/Alert';
+import Princing from './components/pricing/Pricing';
 function App() {
   const [theme, toggleColorMode , mode] = useMode();
   const colors = tokens(theme.palette.mode);
@@ -42,8 +44,6 @@ function App() {
     useEffect(()=>{
       getBasketTotal()
     },[basket])
-
-
     //alert
     const [show , setShow] = useState(false)
     useEffect(()=>{
@@ -51,9 +51,6 @@ function App() {
             setShow(true)
         },1000)
     },[])
-    const close = ()=>{
-      setShow(false)
-  }
   return (
     <ThemeProvider theme={theme}>  
     {/* <StateProvider>  */}
@@ -72,18 +69,23 @@ function App() {
       style={{
         backgroundColor: colors.primary[100],
         direction: language==='en'? 'ltr':'rtl',
+        
       }}> 
         <Alert show={show} setShow={setShow}/>
         <NavBar/>
+        <LanguageButtons/>
         <Routes>
           <Route path="/" element={ <Main/> } />
           <Route path="Product" element={ <Product/> } />
+          <Route path="Pricing" element={ <Princing/> } />
           <Route path="About" element={ <About/> } />
           <Route path="Contact" element={ <Contact/> } />
           <Route path="Cart" element={ <Cart/> } />
           <Route path="Form" element={<Form/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer/>
+
       </div>  
           </ColorModeContext.Provider>
         </GlobalContext.Provider>

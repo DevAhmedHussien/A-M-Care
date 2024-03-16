@@ -10,8 +10,8 @@ return(
     <>
     <Box variant='div'
     sx={{
-        height:'100vh',
-        mt:5
+            //height:'100%',
+            mt:5
     }}>
         <Typography variant='h3' color={colors.primary[200]}
         sx={{textAlign:'center',fontWeight:'700'}}> Talk to a Licensed  <span 
@@ -19,11 +19,11 @@ return(
         <Typography variant='h5'  sx={{textAlign:'center',fontWeight:'500',mt:1}} color={colors.primary[900]}>
         <a style={{color:'#3399ff'}} href='https://'>Our Providers</a> are here to help and care for your needs</Typography>
         <Box variant='div'
-            sx={{margin:'70px auto',
+            sx={{m:'80px auto',
             display:'flex',flexWrap:'wrap',
             justifyContent:'space-around',
             alignItems:'center',
-            width: '80vw' , height:350, borderRadius:'10px' ,// background:colors.primary[100],
+            width: '70%' , height:350, borderRadius:'10px' ,// background:colors.primary[100],
             transition:'170ms',
             background:'linear-gradient(to top right, rgba(235, 245, 255, 0.3) 40%, rgba(243, 246, 249, 0.2) 100%)',
             border:'1px solid #e5eaf299',
