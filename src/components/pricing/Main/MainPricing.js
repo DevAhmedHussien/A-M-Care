@@ -1,9 +1,9 @@
 
 import { Typography,Box,TextField ,Button} from '@mui/material';
-import { tokens } from '../../Context/ThemeContext';
+import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
-import imgMainProduct from '../../images/7514780.png'
-import ToggleButtons from '../Main/ToggleButtons';
+import imgMainProduct from '../../../images/7514780.png'
+import ToggleButtons from '../../Main/ToggleButtons';
 export default function MainPricing(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);

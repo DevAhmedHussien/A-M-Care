@@ -1,11 +1,11 @@
 
 import Grid from '@mui/material/Unstable_Grid2';
 import photoCheckOut from '../../../images/checkoutAd.jpg'
-import { GlobalContext } from "../../../Context/GlobalContext"
+import  GlobalContext  from "../../../Context/GlobalContext"
 import { useTheme } from '@mui/material';
 import { useContext } from 'react';
 import { tokens} from '../../../Context/ThemeContext'
-import { styled } from '@mui/material/styles';
+
 import {Box,Typography,TextField ,Button} from '@mui/material';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import IconButton from '@mui/material/IconButton';

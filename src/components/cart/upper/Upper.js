@@ -1,9 +1,9 @@
-// import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import photoCheckOut from '../../../images/checkoutAd.jpg'
 import { Typography, colors } from '@mui/material';
-import { GlobalContext } from "../../../Context/GlobalContext"
+import GlobalContext  from "../../../Context/GlobalContext"
 import { useTheme } from '@mui/material';
 import { useContext } from 'react';
 import { tokens} from '../../../Context/ThemeContext'
@@ -27,7 +27,6 @@ export default function Upper() {
       marginTop: theme.spacing(2),
     },
   }));
-  
   return (
     <Box sx={{ flexGrow: 1 ,mt:7,p:2
     }}>
@@ -58,7 +57,6 @@ export default function Upper() {
             boxShadow:' rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
           }}/>
         </Grid>
-      
       </Grid>
     </Box>
   );

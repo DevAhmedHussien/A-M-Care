@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import { GlobalContext } from "../../Context/GlobalContext"
+import  GlobalContext  from "../../Context/GlobalContext"
 import { useTheme } from '@mui/material';
 import { useContext } from 'react';
 import { tokens} from '../../Context/ThemeContext'
@@ -13,8 +13,7 @@ const actions = [
 export default function LanguageButtons() {
 const theme = useTheme();
 const colors = tokens(theme.palette.mode);
-const context = useContext(GlobalContext)
-const { language, setLanguage} = context
+const  { language, setLanguage}  = useContext(GlobalContext)
 return (
     <Box>
         <SpeedDial 

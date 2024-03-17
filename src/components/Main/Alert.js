@@ -2,10 +2,13 @@ import { Box, Button, Typography } from "@mui/material";
 import { tokens } from '../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
+import { useContext } from "react";
+import GlobalContext from '../../Context/GlobalContext'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-export default function Alert({show,setShow}){
+export default function Alert(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const { show , setShow  } = useContext( GlobalContext )
     function closing(){
         setShow(false)
     }
@@ -21,7 +24,7 @@ export default function Alert({show,setShow}){
             zIndex:'100',
             width:'70%',
             // background:colors.primary[300],
-             height:'50px',display: show ? 'flex' : 'none',
+            height:'50px',display: show ? 'flex' : 'none',
             alignItems:'center', justifyContent:'space-between',
             background:'linear-gradient(silver, #9198e5)',
             transition:'170ms',

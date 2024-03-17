@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Route,Routes } from 'react-router-dom';
 import NavBar from './components/navBar/NavBar';
 import Main from './components/Main/Main';
@@ -14,64 +14,26 @@ import NotFound from './components/notFound/NotFound';
 import Form from './components/Form/Form';
 import LanguageButtons from './components/navBar/LanguageButtons';
 import Footer from './components/Footer/Footer'
-import{ GlobalContext } from './Context/GlobalContext';
-import { useTranslation } from 'react-i18next';
+import GlobalContext  from './Context/GlobalContext';
+import MyProvider from './Context/MyProvider';
 import Alert from './components/Main/Alert';
 import Princing from './components/pricing/Pricing';
 function App() {
   const [theme, toggleColorMode , mode] = useMode();
   const colors = tokens(theme.palette.mode);
-  const[price,setPrice]=useState()
-  const [basket,setBasket]= useState([])
-  // language
-  const[language,setLanguage]=useState('en')
-  const { t, i18n } = useTranslation();
-  // price 
-    const getBasketTotal = ()=>{
-      let total=0;
-      basket?.map((item)=>{
-        return total += (item.price * item.quantity)
-      })
-      setPrice(total)
-    }   
-  // removeelement 
-  const handleRemove = (id) =>{
-    const arr = basket.filter((item)=>item.id !== id );//delete element from array
-    setBasket(arr);
-    getBasketTotal();
-}
-  // to get price 
-    useEffect(()=>{
-      getBasketTotal()
-    },[basket])
-    //alert
-    const [show , setShow] = useState(false)
-    useEffect(()=>{
-        setTimeout(()=>{
-            setShow(true)
-        },1000)
-    },[])
+  // const { language }  = useContext(GlobalContext)
   return (
     <ThemeProvider theme={theme}>  
     {/* <StateProvider>  */}
-      <GlobalContext.Provider 
-      value = {{ 
-        basket: basket , 
-        setBasket: setBasket ,
-        handleRemove:handleRemove,
-        getBasketTotal:getBasketTotal ,
-        price:price,
-        language,setLanguage
-      }}
-        >
+      <MyProvider>
         <ColorModeContext.Provider value={{toggleColorMode,theme,mode}}>
       <div className= "App"
       style={{
         backgroundColor: colors.primary[100],
-        direction: language==='en'? 'ltr':'rtl',
+        // direction: language==='en'? 'ltr':'rtl',
         
       }}> 
-        <Alert show={show} setShow={setShow}/>
+        <Alert/>
         <NavBar/>
         <LanguageButtons/>
         <Routes>
@@ -88,7 +50,7 @@ function App() {
 
       </div>  
           </ColorModeContext.Provider>
-        </GlobalContext.Provider>
+        </MyProvider>
     {/* </StateProvider> */}
     </ThemeProvider>
   );

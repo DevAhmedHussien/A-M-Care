@@ -14,17 +14,6 @@ return(
                 height:'100%',
                 mt:5
             }}>
-                {/* <Typography variant='h3' color={colors.primary[200]}
-                sx={{textAlign:'center',
-                fontWeight:'700'}}> 
-                Which product is right for 
-                <span 
-                style={{color:'#3399ff'}}> you 
-                </span>  
-                </Typography>
-                <Typography variant='h5'  
-                sx={{textAlign:'center',fontWeight:'500',mt:1}} color={colors.primary[900]}>
-                These treatments requires an assessment of your medical history and labwork by a MinuteMD medical provider.</Typography> */}
                 <Box variant='div'
                     sx={{mt:10,
                     display:'flex',

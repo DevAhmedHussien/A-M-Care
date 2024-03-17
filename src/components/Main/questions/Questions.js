@@ -10,7 +10,7 @@ export default function Questions() {
     return (
         <Box variant='div'
         sx={{
-            // mt:5
+            mt:5
         }}>
             <Typography variant='h3' sx={{textAlign:'center',fontWeight:'700'}} color={colors.primary[200]}>
                 Frequently Asked 

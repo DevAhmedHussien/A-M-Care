@@ -1,11 +1,9 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+  
 import {Button,Box} from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { tokens } from '../../Context/ThemeContext';
+import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 
 export default function ProgramsCards() {
@@ -14,7 +12,7 @@ export default function ProgramsCards() {
     const colors = tokens(theme.palette.mode);
   return (
     <Card  sx={{ 
-    width: '15%' , p:4,
+    width: '18%' , p:5,
     display:'flex',flexDirection:'column',justifyContent:'center',
     alignItems:'center',
     gap:2,

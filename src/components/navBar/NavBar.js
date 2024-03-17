@@ -2,24 +2,19 @@ import { Link } from 'react-router-dom';
 import * as React from 'react';
 import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
-import {Box,Toolbar,IconButton,Typography,Menu,Button,Container} from '@mui/material';
+import {Box,Toolbar,IconButton,Typography,Menu,Button,Container,MenuItem} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-// import LanguageButtons from './LanguageButtons';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import NightsStayOutlinedIcon from '@mui/icons-material/NightsStayOutlined';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import { ColorModeContext,tokens} from '../../Context/ThemeContext'
-import { GlobalContext } from "../../Context/GlobalContext"
+import  GlobalContext  from "../../Context/GlobalContext"
 import { useTheme } from '@mui/material';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 
-import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-
-
 const pages = [  'Home', 'Pricing','Product', 'About', 'Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function DrawerAppBar() {
 const [anchorElNav, setAnchorElNav] = React.useState(null);
 const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -38,8 +33,8 @@ const handleCloseUserMenu = () => {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const context = useContext(GlobalContext)
-    const { basket ,setBasket} = context
+    const { basket } = useContext(GlobalContext)
+    console.log('basket',basket)
     const { toggleColorMode , mode } = useContext(ColorModeContext)
 return (
     <AppBar position="static"  sx={{background: colors.primary[100] , width : '100%',

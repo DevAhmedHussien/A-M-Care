@@ -1,4 +1,4 @@
-import { tokens } from '../../Context/ThemeContext';
+import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 import { Typography,Box} from '@mui/material';
 import ProgramsCards from './ProgramsCards';
@@ -7,7 +7,7 @@ export default function WPrograms(){
     const colors = tokens(theme.palette.mode);
     return(
         <>
-         <Box variant='div'
+        <Box variant='div'
             sx={{
             //height:'100%',
             mt:5}}>
@@ -21,7 +21,8 @@ export default function WPrograms(){
                 p:5,
                 m:'80px auto',
                 display:'flex',
-                flexWrap:'wrap',justifyContent:'center',
+                flexWrap:'wrap',
+                justifyContent:'center',
                 alignItems:'center',
                 gap:3}}>
                 <ProgramsCards/>
@@ -29,7 +30,7 @@ export default function WPrograms(){
                 <ProgramsCards/>
                 <ProgramsCards/>
                 <ProgramsCards/>
-                <ProgramsCards/>
+                {/* <ProgramsCards/> */}
             </Box>
         </Box>
         </>

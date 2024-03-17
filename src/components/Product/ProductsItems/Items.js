@@ -5,7 +5,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import InnerCardWeightMan from '../../Main/weightManagement/InnerCardWeightMan';
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
-import { GlobalContext } from "../../../Context/GlobalContext"
+import  GlobalContext  from "../../../Context/GlobalContext"
 import Rating from '@mui/material/Rating';
 export default function Items({item}){
     const theme = useTheme();
