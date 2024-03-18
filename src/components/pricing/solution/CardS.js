@@ -15,12 +15,9 @@ typ4=''
         
         <Box variant='div'
             sx = {{
-                
-                // direction:dir,
                 p:5,
                 m:'80px auto',
                 display:'flex',
-                // flexWrap:'wrap',
                 justifyContent:'center',
                 alignItems:'start',
                 gap:3
@@ -39,7 +36,8 @@ typ4=''
                         border:'1px solid #e5eaf299',
                     }}
                         />
-                <Box variant='div'
+                <Box 
+                variant='div'
                 sx = {{
                     width:'60%',
                     p:1,
@@ -53,18 +51,19 @@ typ4=''
                     <Typography variant='h4' color={colors.primary[300]}
                     sx={{}}>
                         {ques}
-                    <span 
-                    style={{color:colors.primary[200]}}> {typ1} </span> 
                     </Typography>
-                    <Typography variant='h4' color={colors.primary[200]}
+                    <Typography variant='h5' color={colors.primary[200]}
+                    sx={{}}> {typ1} 
+                    </Typography>
+                    <Typography variant='h5' color={colors.primary[200]}
                     sx={{}}>
                         {typ2}
                     </Typography>
-                    <Typography variant='h4' color={colors.primary[200]}
+                    <Typography variant='h5' color={colors.primary[200]}
                     sx={{}}>
                         {typ3}
                     </Typography>
-                    <Typography variant='h4' color={colors.primary[200]}
+                    <Typography variant='h5' color={colors.primary[200]}
                     sx={{}}>
                         {typ4}
                     </Typography>

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    text-transform: capitalize;
 }
 :root{
     --primary:#638889;

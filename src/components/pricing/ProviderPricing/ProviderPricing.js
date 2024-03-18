@@ -1,7 +1,7 @@
 import { Typography,Box,TextField ,Button} from '@mui/material';
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
-
+import a from '../../../images/7514780.png'
 export default function ProviderPricing(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -14,36 +14,15 @@ export default function ProviderPricing(){
             gap:5
         }}>
             <Box variant='div'>
-                <img src='' alt=''
+                <img src={a} alt=''
                 style={{   
-                    width:'100%',
-                    borderRadius:'50%'
+                    width:'200px',
+                    height:'200px',
+                    borderRadius:'50%',
+                    border:`0px solid ${colors.primary[300]}`,
+                    boxShadow:' rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
                 }}/>
-                <Typography variant="h4" >HealthAndSafetyOutlinedIcon</Typography>
-            </Box>
-            <Box>
-                <img src='' alt=''
-                style={{   
-                    width:'100%',
-                    borderRadius:'50%'
-                }}/>
-                <Typography variant="h4" >asd</Typography>
-            </Box>
-            <Box>
-                <img src='' alt=''
-                style={{   
-                    width:'100%',
-                    borderRadius:'50%'
-                }}/>
-                <Typography variant="h4" >asd</Typography>
-            </Box>
-            <Box>
-                <img src='' alt=''
-                style={{   
-                    width:'100%',
-                    borderRadius:'50%'
-                }}/>
-                <Typography variant="h4" >sdasd</Typography>
+                <Typography variant="h4" textAlign='center' color={colors.primary[900]} sx={{mt:2}} >name of hamada</Typography>
             </Box>
         </Box>
         </>
