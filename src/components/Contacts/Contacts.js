@@ -165,7 +165,6 @@
         alignItems:'start',
         gap:5}}>
             <TextField sx={{'& .MuiInput-underline:before': { borderBottomColor: colors.primary[300] },
-            // '& .MuiInput-underline:after': { borderBottomColor: colors.primary[300] }
     }}
             style={{width:500,
                 background:'',

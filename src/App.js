@@ -23,8 +23,7 @@ function App() {
   const colors = tokens(theme.palette.mode);
   // const { language }  = useContext(GlobalContext)
   return (
-    <ThemeProvider theme={theme}>  
-    {/* <StateProvider>  */}
+    <ThemeProvider theme={theme}>
       <MyProvider>
         <ColorModeContext.Provider value={{toggleColorMode,theme,mode}}>
       <div className= "App"
@@ -47,11 +46,9 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
-
       </div>  
           </ColorModeContext.Provider>
         </MyProvider>
-    {/* </StateProvider> */}
     </ThemeProvider>
   );
 }
