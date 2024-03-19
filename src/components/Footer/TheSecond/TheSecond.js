@@ -29,8 +29,8 @@ export default function TheSecond(){
             alignItems:'start',
             justifyContent:'space-between',
         }}>
-            <Box sx={{width:'30%'}}>
-            <Typography variant='h1'   color= {colors.primary[200]}>
+            <Box sx={{width:'30%',}}>
+            <Typography variant='h1'   color= {colors.primary[200]} sx={{p:'10px'}}>
                 A&M
             </Typography>
             <ToggleButtons/>

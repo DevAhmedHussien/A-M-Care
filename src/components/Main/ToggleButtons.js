@@ -11,7 +11,7 @@ export default function ToggleButtons(){
     const colors = tokens(theme.palette.mode);
     return(
         <>
-        <Box variant='div' sx={{mt:2}}>
+        <Box variant='div' sx={{}}>
             <IconButton color="secondary" aria-label="add an alarm">
                 <AlarmIcon  sx={{color:colors.primary[300]}}/>
             </IconButton>

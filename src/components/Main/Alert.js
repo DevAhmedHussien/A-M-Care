@@ -38,16 +38,16 @@ export default function Alert(){
         <Box
         sx={{
             p:3, 
-
             color:'white',
             display: 'flex' ,
             alignItems:'center', justifyContent:'center',gap:2,
             }}>
             <Typography variant="h5">whe have offer bb 50% </Typography>
             <Button  color='secondary' sx={{textDecoration:'under-line'}}
-            onClick={closing}>click here</Button>
+            >click here</Button>
         </Box>
-        <IconButton aria-label="delete" size="small">
+        <IconButton aria-label="delete" size="small"
+        onClick={closing}>
             <CloseOutlinedIcon 
             sx={{fontSize:20,
                 color:colors.primary[200]}} />

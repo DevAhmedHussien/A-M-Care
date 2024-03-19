@@ -11,6 +11,7 @@ import { tokens } from '../../Context/ThemeContext';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import { useTheme } from '@mui/material';
 import ProvidersFaces from './ProviderPricing/providersFaces';
+import CardSLeft from './solution/CardSLeft';
 export default function Princing(){  
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -22,7 +23,7 @@ export default function Princing(){
             <OurPriority/>
             <SolutionFinally/>
             <MedWork/>
-            <CardS 
+            <CardSLeft 
             // dir='rtl'
             ques='How GLP-1s Work ? '
             typ1='GLP-1 (glucagon-like peptide 1) weight loss treatments are named after the hormone receptor they stimulate. When injected or taken orally, GLP-1s increase insulin production and reduce your feeling of hunger.  '
@@ -68,13 +69,13 @@ export default function Princing(){
             <ProvidersFaces/>
             <CardS 
             // dir='ltr'
-            ques='The Henry Guarantee ? '
+            ques='The A&M Guarantee ? '
             typ1='100% Satisfaction Or Your Money Back'
             typ2='For the first 30 days, you get complete access to Henry programs and our providers to fully test how effective our weight loss treatments are.   '
             typ3='If you are not 100% satisfied, or you do not see adequate results within 30 days, simply request your money back and you will be refunded in full. '
             typ4='No questions asked.'
             />
-            <CardS 
+            <CardSLeft 
             // dir='ltr'
             ques='What are Compounded Medications? '
             typ1='Compounded medications are a patient-specific medication created in a state Board of Pharmacy or FDA licensed compounding facility per a prescription from a licensed healthcare professional. Compounded drugs are required to exclusively use ingredients from FDA-licensed facilities, and test sterile compounds for potency, sterility, and purity. '

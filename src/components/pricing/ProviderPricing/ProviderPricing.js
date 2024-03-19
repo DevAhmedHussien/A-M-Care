@@ -1,7 +1,7 @@
 import { Typography,Box,TextField ,Button} from '@mui/material';
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
-import a from '../../../images/7514780.png'
+import a from '../../../images/7514780.png';
 export default function ProviderPricing(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
