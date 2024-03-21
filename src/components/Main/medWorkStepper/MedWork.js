@@ -87,7 +87,7 @@ return (
                         boxShadow:'rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
                         border:'1px solid #3399ff'
                     }}}>
-                        <Typography variant='h6' sx={{width:'50%'}}>{step.description}</Typography>
+                        <Typography variant='h5' sx={{width:'50%'}}>{step.description}</Typography>
                         <img src={step.image} alt='' style={{width:'200px',height:'200px',borderRadius:'10px'}}/>
                     </Box>
                     <Box sx={{ mb: 2 }}>

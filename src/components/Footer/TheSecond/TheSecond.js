@@ -35,9 +35,9 @@ export default function TheSecond(){
             </Typography>
             <ToggleButtons/>
             </Box>
-            <BoxTheSecond/>
-            <BoxTheSecond/>
-            <BoxTheSecond/>
+            <BoxTheSecond title='Pages' typ1='Home' typ2='Pricing' typ3='Product' typ4='Contact' />
+            <BoxTheSecond title='Pages' typ1='Home' typ2='Pricing' typ3='Product' typ4='Contact'/>
+            <BoxTheSecond title='Pages' typ1='Home' typ2='Pricing' typ3='Product' typ4='Contact'/>
         </Box>
         
         </>

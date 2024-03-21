@@ -23,7 +23,7 @@ export default function Questions() {
             <Box variant='div'
                 sx={{
                     m:'70px auto',
-                    width:'70%',
+                    width:'80%',
                 }}>
                     <Question ques={'ques 1 '} ans={'answer'}/>
                     <Question ques={'ques 1 '} ans={'answer'}/>

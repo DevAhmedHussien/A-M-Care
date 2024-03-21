@@ -12,23 +12,23 @@ export default function TheFirst(){
         <>
         <Box 
         sx={{
+            background:'black',
             height:'15vh',
             display:'flex',
             flexWrap:'wrap',
             alignItems:'center',
-            justifyContent:'space-between',
-            background:'black',
+            justifyContent:'space-evenly',
         }}>
             
         <BoxTheFirst 
         i={<ContactPhoneOutlinedIcon fontSize="large" sx={{color:colors.primary[300]}}/>} 
-        type='ay 7onkish'/>
+        type='Our Email: ahmed@hamada.com '/>
         <BoxTheFirst   
         i={<EmailOutlinedIcon fontSize="large" sx={{color:colors.primary[300]}}/>} 
-        type='ay 7onkish'/>
+        type='tel: +79821313578'/>
         <BoxTheFirst 
         i={<WaterDropOutlinedIcon fontSize="large" sx={{color:colors.primary[300]}}/>} 
-        type='ay 7onkish'/>
+        type='Our Address: Link to google map'/>
         </Box>
         </>
     )

@@ -1,10 +1,12 @@
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 import { Typography,Box} from '@mui/material';
-import ProgramsCards from './ProgramsCards';
+import variantOfData from '../../../variantOfData';
+import ProgramsCards from './ProgramsCards'; 
 export default function WPrograms(){
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    console.log(variantOfData)
     return(
         <>
         <Box variant='div'
@@ -25,11 +27,18 @@ export default function WPrograms(){
                 justifyContent:'center',
                 alignItems:'center',
                 gap:3}}>
+                {variantOfData.map((card)=>{
+                    return (
+                        <>
+                        <ProgramsCards key= {card.id} card={card}/>
+                        </>
+                    )
+                })}
+                {/* <ProgramsCards/>
                 <ProgramsCards/>
                 <ProgramsCards/>
                 <ProgramsCards/>
-                <ProgramsCards/>
-                <ProgramsCards/>
+                <ProgramsCards/> */}
                 {/* <ProgramsCards/> */}
             </Box>
         </Box>

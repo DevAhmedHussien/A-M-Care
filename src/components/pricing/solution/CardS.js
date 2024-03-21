@@ -15,9 +15,11 @@ typ4=''
         
         <Box variant='div'
             sx = {{
+                width:'90%',
                 p:5,
                 m:'80px auto',
                 display:'flex',
+                flexWrap:'wrap',
                 justifyContent:'center',
                 alignItems:'start',
                 gap:3

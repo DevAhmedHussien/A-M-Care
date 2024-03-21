@@ -26,29 +26,28 @@ function App() {
     <ThemeProvider theme={theme}>
       <MyProvider>
         <ColorModeContext.Provider value={{toggleColorMode,theme,mode}}>
-      <div className= "App"
-      style={{
-        backgroundColor: colors.primary[100],
-        // direction: language==='en'? 'ltr':'rtl',
-        
-      }}> 
-        <Alert/>
-        <NavBar/>
-        <LanguageButtons/>
-        <Routes>
-          <Route path="/" element={ <Main/> } />
-          <Route path="Product" element={ <Product/> } />
-          <Route path="Pricing" element={ <Princing/> } />
-          <Route path="About" element={ <About/> } />
-          <Route path="Contact" element={ <Contact/> } />
-          <Route path="Cart" element={ <Cart/> } />
-          <Route path="Form" element={<Form/>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer/>
-      </div>  
-          </ColorModeContext.Provider>
-        </MyProvider>
+          <div className= "App"
+          style={{
+            backgroundColor: colors.primary[100],
+            // direction: language==='en'? 'ltr':'rtl',
+          }}> 
+            <Alert/>
+            <NavBar/>
+            <LanguageButtons/>
+            <Routes>
+              <Route path="/" element={ <Main/> } />
+              <Route path="Product" element={ <Product/> } />
+              <Route path="Pricing" element={ <Princing/> } />
+              <Route path="About" element={ <About/> } />
+              <Route path="Contact" element={ <Contact/> } />
+              <Route path="Cart" element={ <Cart/> } />
+              <Route path="Form" element={<Form/>} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer/>
+          </div>  
+        </ColorModeContext.Provider>
+      </MyProvider>
     </ThemeProvider>
   );
 }
