@@ -26,7 +26,8 @@ const toggleDrawer = (anchor, open) => (event) => {
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
         >
-        <Divider />
+        {/* <Divider /> */}
+        hahahah
         </Box>
     );
 return (

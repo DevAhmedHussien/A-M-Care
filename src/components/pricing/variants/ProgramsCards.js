@@ -12,8 +12,8 @@ export default function ProgramsCards({card}) {
     const colors = tokens(theme.palette.mode);
   return (
     <Card  sx={{ 
-    width: '18%' , p:5,
-    height:750,
+    width: '250px' , p:5,
+    // height:750,
     display:'flex',flexDirection:'column',justifyContent:'center',
     alignItems:'center',
     gap:2,
@@ -27,44 +27,61 @@ export default function ProgramsCards({card}) {
         border:'1px solid #3399ff'
     } }}
     >
-      <Box sx={{height:150}}>
+      <Box sx={{height:100}}>
         <Typography variant='h3' sx={{textAlign:'center'}} color={colors.primary[200]}>
         {card.title}
         </Typography>
       </Box>
         <hr style={{width:'100%',color:colors.primary[300], background:colors.primary[300]}}/>
-      <Box sx={{height:150}}>
-        <Typography variant='h4' sx={{ textAlign:'center'}} color={colors.primary[200]}>
+      <Box sx={{height:100}}>
+        <Typography variant='h4' sx={{ textAlign:'center'}} 
+        color={colors.primary[200]}>
         <span style={{fontSize:50}}>{card.price}</span> monthly
         </Typography>
+      </Box>  
         <hr style={{width:'100%',color:colors.primary[300], background:colors.primary[300]}}/>
-      </Box>
-      <Box sx={{height:300}}>
-        <img src='' alt='' style={{width:'100%',height:'80px'}} />
-        <Typography variant='h6' sx={ {textAlign:'center'}} color={colors.primary[200]} >
+
+      <Box sx={{height:150}}>
+        <img src='' alt='' 
+        style={{width:'100%',height:'80px'}} />
+        <Typography variant='h6' 
+        sx={ {textAlign:'center'}} 
+        color={colors.primary[200]} >
           {card.descriptionOfDays}
         </Typography >
-        <Typography variant='h3' sx={{fontWeight:600,textAlign:'center'}} color={colors.primary[200]}>
+        <Typography variant='h3' 
+        sx={{fontWeight:600,textAlign:'center'}}
+        color={colors.primary[200]}>
         GLP-1
         </Typography >
     </Box>
     <hr style={{width:'100%',color:colors.primary[300], background:colors.primary[300]}}/>
-    <Box sx={{height:150}}>
-
-    <Typography variant='h5' sx={{textAlign:'center'}} color={colors.primary[200]}>
-    Same ingredient as <br/>
-    {card.ingredient}
-    {/* <Button href='' alt='' >Ozempic®* and Wegovy®*</Button> */}
+    <Box sx={{height:100}}>
+    <Typography variant='h5'  color={colors.primary[200]} 
+      sx={{
+        textAlign:'center',
+        transition:"all .3s ease" ,
+        }}>
+      Same ingredient as  
+    </Typography>
+    {/* <br/>  */}
+    <Typography 
+      sx={{
+        textAlign:'center',
+        transition:"all .3s ease" ,
+        '&:hover':{
+          cursor:"pointer",
+          fontWeight:700,
+        }
+        }}>
+          {card.ingredient}
     </Typography>
     </Box>
     <hr style={{width:'100%',color:colors.primary[300], background:colors.primary[300]}}/>
-    
     <Box
     sx={{display:'flex',flexDirection:'column' ,alignItems:'center',gap:2}}>
-    {/* <Button variant="outlined">Outlined</Button> */}
     <Button variant="contained">Get started</Button>
     <Slider/>
-    
     </Box>
     </Card>
   );

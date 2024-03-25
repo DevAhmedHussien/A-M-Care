@@ -31,7 +31,7 @@
         id:5,
         title:'Phentermine',
         price:'$297',
-        descriptionOfDays:'Daily Tablets Stimulant',
+        descriptionOfDays:'Daily Tablets',
         ingredient:'Lomaira® and Qsymia®',
     },
 ]
