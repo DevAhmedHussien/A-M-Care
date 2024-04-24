@@ -34,12 +34,6 @@ export default function WPrograms(){
                         </>
                     )
                 })}
-                {/* <ProgramsCards/>
-                <ProgramsCards/>
-                <ProgramsCards/>
-                <ProgramsCards/>
-                <ProgramsCards/> */}
-                {/* <ProgramsCards/> */}
             </Box>
         </Box>
         </>

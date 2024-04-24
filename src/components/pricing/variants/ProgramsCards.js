@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import { tokens } from '../../../Context/ThemeContext';
 import { useTheme } from '@mui/material';
 import Slider from './silder/Slider';
+import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+
 
 export default function ProgramsCards({card}) {
 
@@ -79,9 +81,34 @@ export default function ProgramsCards({card}) {
     </Box>
     <hr style={{width:'100%',color:colors.primary[300], background:colors.primary[300]}}/>
     <Box
-    sx={{display:'flex',flexDirection:'column' ,alignItems:'center',gap:2}}>
-    <Button variant="contained">Get started</Button>
-    <Slider/>
+    sx={{display:'flex',flexDirection:'column' ,alignItems:'center',gap:0}}>
+    <Button variant="contained"  
+            endIcon={
+            <ChevronRightOutlinedIcon id='icon1' 
+            sx={{position:'absolute',top:'9px',color:colors.primary[150],transition:'170ms',}}/>} 
+                sx={{ my: 2, 
+                    position :"relative", 
+                    background: `linear-gradient(to right bottom, #007fff, #3399ff 140%)`,mt:'25px',
+                    boxShadow:' rgba(0, 0, 0, 0.1) 0px 20px 25px, rgba(0, 0, 0, 0.04) 0px 10px 10px',
+                    display: 'flex',textTransform: 'capitalize',width:150,
+                    transition:'1700ms',
+                    color:'white',
+                    fontWeight:600,
+                        '&:hover ': {
+                          backgroundColor: '#9ea3dc',
+
+                        // mb:1,
+                    },
+                        '&:hover #icon1': {
+                            marginLeft:'5px'
+                    },'&:active': {
+                        boxShadow: 'none',
+                        backgroundColor: '#9ea3dc',
+
+                    }}}
+                    type="submit" value="Send">Get Started
+    </Button>
+    <Slider card={card}/>
     </Box>
     </Card>
   );
